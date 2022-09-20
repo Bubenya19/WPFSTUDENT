@@ -9,7 +9,7 @@
             <Setter Property="Foreground" Value="#FFE930FD"/>
             <Setter Property="FontStyle" Value="Italic"/>
             <Setter Property="Margin" Value="5 0"/>
-            <Setter Property="FontWeight" Value="200"/>
+            
         </Style>
         <Style TargetType="{x:Type TextBox}">
             <Setter Property="Foreground" Value="#FFE930FD"/>

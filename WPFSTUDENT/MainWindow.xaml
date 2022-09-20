@@ -12,41 +12,47 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
+        
         <GroupBox Grid.Column="0" Margin="10" Header="Создать специальность"  Foreground="Purple" BorderBrush="#FF9416BB" FontSize="16" FontWeight="Bold">
-            <StackPanel Grid.Column="0" Margin="10" Background="#FFE7F3F2">
-
+            <StackPanel Name="NewEmployeePanel" Grid.Column="0"  Margin="10" Background="#FFE7F3F2" DataContext="{Binding NewEmployee}">
                 <Label Foreground="#FFE930FD" FontSize="14" FontWeight="Bold">Код</Label>
-            <TextBox></TextBox>
+                <TextBox Name="textCodeSpec" Text="{Binding CodeSpec, UpdateSourceTrigger=PropertyChanged}"></TextBox>
                 <Label Foreground="#FFE930FD" FontSize="14" FontWeight="Bold">Наименование</Label>
-            <TextBox></TextBox>
+                <TextBox Name="textNameSpec" Text="{Binding NameSpec, UpdateSourceTrigger=PropertyChanged}"></TextBox>
                 <Label Foreground="#FFE930FD" FontSize="14" FontWeight="Bold">Квалифиация</Label>
-            <TextBox></TextBox>
-            <Button Content="Создать"></Button>
-        </StackPanel>
+                <TextBox Name="textQualSpec" Text="{Binding QualSpec, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                <Button Name="CreateSpec" Content="Создать" Click="Button_Click_1"></Button>
+            </StackPanel>
         </GroupBox>
+        
         <GroupBox Grid.Column="1" Margin="10" Header="Создать группу"  Foreground="Purple" BorderBrush="#FF9416BB" FontSize="16" FontWeight="Bold">
-            <StackPanel Grid.Column="1" Margin="10" Background="#FFE7F3F2">
+            <StackPanel Name="NewEmployeePanel1" Grid.Column="1" Margin="10" Background="#FFE7F3F2" DataContext="{Binding ElementName=EmployeeList, Path=SelectedItem}">
                 <Label Foreground="#FFE930FD" FontSize="14" FontWeight="Bold">Создать группу</Label>
                 <Label Foreground="#FFE930FD" FontSize="14" FontWeight="Bold">Номер</Label>
-                <TextBox></TextBox>
+                <TextBox Name="textNumberGroup" Text="{Binding NumberGroup, UpdateSourceTrigger=PropertyChanged}"></TextBox>
                 <Label Foreground="#FFE930FD" FontSize="14" FontWeight="Bold">Курс</Label>
-                <TextBox></TextBox>
+                <TextBox Name="textCourse" Text="{Binding CourseGroup, UpdateSourceTrigger=PropertyChanged}"></TextBox> 
                 <Label Foreground="#FFE930FD" FontSize="14" FontWeight="Bold">Специальность</Label>
-                <ListBox Height="150"></ListBox>
-                <Button Content="Создать"></Button>
+                
+                <ListBox Height="150" Name="EmployeeList" ItemsSource="{Binding Codes}">
+                    
+                </ListBox>
+                <Button Name="CreateGroup" Click="Button_Click_2" Content="Создать"></Button>
             </StackPanel>
         </GroupBox>
+        
         <GroupBox Grid.Column="2" Margin="10" Header="Создать студента"  Foreground="Purple" BorderBrush="#FF9416BB" FontSize="16" FontWeight="Bold">
-            <StackPanel Grid.Column="2" Margin="10" Background="#FFE7F3F2">
+            <StackPanel Name="NewEmployeePanel2" Grid.Column="2" Margin="10" Background="#FFE7F3F2">
                 <Label Foreground="#FFE930FD" FontSize="14" FontWeight="Bold">Создать студента</Label>
                 <Label Foreground="#FFE930FD" FontSize="14" FontWeight="Bold">Фамилия</Label>
-                <TextBox ></TextBox>
+                <TextBox Name="Surname"></TextBox>
                 <Label Foreground="#FFE930FD" FontSize="14" FontWeight="Bold">Имя</Label>
-                <TextBox></TextBox>
+                <TextBox Name="StudName"></TextBox>
                 <Label Foreground="#FFE930FD" FontSize="14" FontWeight="Bold">Группа</Label>
                 <ListBox Height="150"></ListBox>
-                <Button Content="Создать"></Button>
+                <Button Name="CreateStudent" Click="Button_Click_3" Content="Создать"></Button>
             </StackPanel>
         </GroupBox>
+        
     </Grid>
 </Window>
