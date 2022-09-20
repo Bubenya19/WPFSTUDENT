@@ -1,0 +1,33 @@
+﻿<Application x:Class="WPFSTUDENT.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WPFSTUDENT"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="Foreground" Value="#FFE930FD"/>
+            <Setter Property="FontStyle" Value="Italic"/>
+            <Setter Property="Margin" Value="5 0"/>
+            <Setter Property="FontWeight" Value="200"/>
+        </Style>
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="Foreground" Value="#FFE930FD"/>
+            <Setter Property="BorderBrush" Value="#FFE930FD"/>
+            <Setter Property="Margin" Value="10 0"/>
+        </Style>
+        
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="#FFE930FD"/>
+            <Setter Property="BorderBrush" Value="#FFE930FD"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+        <Style TargetType="{x:Type ListBox}">
+
+            <Setter Property="BorderBrush" Value="#FFE930FD"/>
+            <Setter Property="Margin" Value="10 0 10 10"/>
+            <Setter Property="Padding" Value="10 10 10 10"/>
+        </Style>
+    </Application.Resources>
+</Application>

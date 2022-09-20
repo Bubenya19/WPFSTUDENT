@@ -1,0 +1,52 @@
+﻿<Window x:Class="WPFSTUDENT.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFSTUDENT"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="900">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <GroupBox Grid.Column="0" Margin="10" Header="Создать специальность"  Foreground="Purple" BorderBrush="#FF9416BB" FontSize="16" FontWeight="Bold">
+            <StackPanel Grid.Column="0" Margin="10" Background="#FFE7F3F2">
+
+                <Label Foreground="#FFE930FD" FontSize="14" FontWeight="Bold">Код</Label>
+            <TextBox></TextBox>
+                <Label Foreground="#FFE930FD" FontSize="14" FontWeight="Bold">Наименование</Label>
+            <TextBox></TextBox>
+                <Label Foreground="#FFE930FD" FontSize="14" FontWeight="Bold">Квалифиация</Label>
+            <TextBox></TextBox>
+            <Button Content="Создать"></Button>
+        </StackPanel>
+        </GroupBox>
+        <GroupBox Grid.Column="1" Margin="10" Header="Создать группу"  Foreground="Purple" BorderBrush="#FF9416BB" FontSize="16" FontWeight="Bold">
+            <StackPanel Grid.Column="1" Margin="10" Background="#FFE7F3F2">
+                <Label Foreground="#FFE930FD" FontSize="14" FontWeight="Bold">Создать группу</Label>
+                <Label Foreground="#FFE930FD" FontSize="14" FontWeight="Bold">Номер</Label>
+                <TextBox></TextBox>
+                <Label Foreground="#FFE930FD" FontSize="14" FontWeight="Bold">Курс</Label>
+                <TextBox></TextBox>
+                <Label Foreground="#FFE930FD" FontSize="14" FontWeight="Bold">Специальность</Label>
+                <ListBox Height="150"></ListBox>
+                <Button Content="Создать"></Button>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Grid.Column="2" Margin="10" Header="Создать студента"  Foreground="Purple" BorderBrush="#FF9416BB" FontSize="16" FontWeight="Bold">
+            <StackPanel Grid.Column="2" Margin="10" Background="#FFE7F3F2">
+                <Label Foreground="#FFE930FD" FontSize="14" FontWeight="Bold">Создать студента</Label>
+                <Label Foreground="#FFE930FD" FontSize="14" FontWeight="Bold">Фамилия</Label>
+                <TextBox ></TextBox>
+                <Label Foreground="#FFE930FD" FontSize="14" FontWeight="Bold">Имя</Label>
+                <TextBox></TextBox>
+                <Label Foreground="#FFE930FD" FontSize="14" FontWeight="Bold">Группа</Label>
+                <ListBox Height="150"></ListBox>
+                <Button Content="Создать"></Button>
+            </StackPanel>
+        </GroupBox>
+    </Grid>
+</Window>
