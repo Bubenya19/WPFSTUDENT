@@ -16,40 +16,44 @@
         <GroupBox Grid.Column="0" Margin="10" Header="Создать специальность"  Foreground="Purple" BorderBrush="#FF9416BB" FontSize="16" FontWeight="Bold">
             <StackPanel Name="NewEmployeePanel" Grid.Column="0"  Margin="10" Background="#FFE7F3F2" DataContext="{Binding NewSpeciality}">
                 <Label Foreground="#FFE930FD" FontSize="14" FontWeight="Bold">Код</Label>
-                <TextBox Name="textCodeSpec" Text="{Binding CodeSpec, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                <TextBox Name="textCodeSpec" Text="{Binding code, UpdateSourceTrigger=PropertyChanged}"></TextBox>
                 <Label Foreground="#FFE930FD" FontSize="14" FontWeight="Bold">Наименование</Label>
-                <TextBox Name="textNameSpec" Text="{Binding NameSpec, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                <TextBox Name="textNameSpec" Text="{Binding namespec, UpdateSourceTrigger=PropertyChanged}"></TextBox>
                 <Label Foreground="#FFE930FD" FontSize="14" FontWeight="Bold">Квалифиация</Label>
-                <TextBox Name="textQualSpec" Text="{Binding QualSpec, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                <TextBox Name="textQualSpec" Text="{Binding qualification, UpdateSourceTrigger=PropertyChanged}"></TextBox>
                 <Button Name="CreateSpec" Content="Создать" Click="Button_Click_1"></Button>
             </StackPanel>
         </GroupBox>
         
         <GroupBox Grid.Column="1" Margin="10" Header="Создать группу"  Foreground="Purple" BorderBrush="#FF9416BB" FontSize="16" FontWeight="Bold">
-            <StackPanel Name="NewEmployeePanel1" Grid.Column="1" Margin="10" Background="#FFE7F3F2" DataContext="{Binding ElementName=EmployeeList, Path=SelectedItem}">
+            <StackPanel Name="NewEmployeePanel1" Grid.Column="1" Margin="10" Background="#FFE7F3F2" DataContext="{Binding ElementName=SpecList, Path=SelectedItem}">
                 
                 <Label Foreground="#FFE930FD" FontSize="14" FontWeight="Bold">Номер</Label>
-                <TextBox Name="textNumberGroup" Text="{Binding NumberGroup, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                <TextBox Name="textNumberGroup" Text="{Binding number, UpdateSourceTrigger=PropertyChanged}"></TextBox>
                 <Label Foreground="#FFE930FD" FontSize="14" FontWeight="Bold">Курс</Label>
-                <TextBox Name="textCourse" Text="{Binding CourseGroup, UpdateSourceTrigger=PropertyChanged}"></TextBox> 
+                <TextBox Name="textCourse" Text="{Binding course, UpdateSourceTrigger=PropertyChanged}"></TextBox> 
                 <Label Foreground="#FFE930FD" FontSize="14" FontWeight="Bold">Специальность</Label>
 
-                <ListBox Height="150" Name="EmployeeList" ItemsSource="{Binding Specialitys}">
-                    
+                <ListBox Height="150" Name="SpecList">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Namespec}"></TextBlock>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
                 </ListBox>
                 <Button Name="CreateGroup" Click="Button_Click_2" Content="Создать"></Button>
             </StackPanel>
         </GroupBox>
         
         <GroupBox Grid.Column="2" Margin="10" Header="Создать студента"  Foreground="Purple" BorderBrush="#FF9416BB" FontSize="16" FontWeight="Bold">
-            <StackPanel Name="NewEmployeePanel2" Grid.Column="2" Margin="10" Background="#FFE7F3F2">
+            <StackPanel Name="NewEmployeePanel2" Grid.Column="2" Margin="10" Background="#FFE7F3F2" DataContext="{Binding ElementName=GroupList, Path=SelectedItem}">
                 
                 <Label Foreground="#FFE930FD" FontSize="14" FontWeight="Bold">Фамилия</Label>
                 <TextBox Name="Surname" Text="{Binding Surname, UpdateSourceTrigger=PropertyChanged}"></TextBox>
                 <Label Foreground="#FFE930FD" FontSize="14" FontWeight="Bold">Имя</Label>
                 <TextBox Name="StudName" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"></TextBox>
                 <Label Foreground="#FFE930FD" FontSize="14" FontWeight="Bold">Группа</Label>
-                <ListBox Height="150"></ListBox>
+                <ListBox Height="150" Name="GroupList"></ListBox>
                 <Button Name="CreateStudent" Click="Button_Click_3" Content="Создать"></Button>
             </StackPanel>
         </GroupBox>

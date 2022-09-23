@@ -41,11 +41,16 @@ namespace WPFSTUDENT
 
             Connect("10.14.206.27", "5432", "Denis", "1234", "students");
 
-            //Binding binding = new Binding();
-            //binding.Source = Codes;
-            //binding.Source = Numbers;
-
-
+            Binding binding = new Binding();
+            binding.Source = Specialitys;
+           
+            Binding binding1 = new Binding();
+            binding1.Source = Groups;
+            
+            SpecList.SetBinding(ListBox.ItemsSourceProperty, binding);
+            GroupList.SetBinding(ListBox.ItemsSourceProperty, binding1); 
+            LoadSpec();
+            
             DataContext = this;
         }
         private void Connect(string host, string port, string user, string pass, string dbname)
@@ -97,7 +102,7 @@ namespace WPFSTUDENT
 
             NpgsqlCommand command = new NpgsqlCommand();
             command.Connection = connection;
-            command.CommandText = "SELECT code(speciality), namespec(speciality), spec(group)";
+            command.CommandText = "SELECT code, namespec, qualifiation FROM speciality";
             var result = command.ExecuteReader();
             if (result == null) return;
             if (result.HasRows)
@@ -136,13 +141,14 @@ namespace WPFSTUDENT
             if (NumberGroup.Length == 0) return;
             string CourseGroup = textCourse.Text.Trim();
             if (CourseGroup.Length == 0) return;
-
+            int specid = textSpecid.Text.Trim();
+            if(specid.Length == 0) return; 
             NpgsqlCommand command = new NpgsqlCommand();
             command.Connection = connection;
             command.CommandText = "INSERT INTO group(number, course) VALUES(@a, @b)";
             command.Parameters.AddWithValue("@a", NpgsqlDbType.Varchar, NumberGroup);
             command.Parameters.AddWithValue("@b", NpgsqlDbType.Varchar, CourseGroup);
-
+            command.Parameters.AddWithValue("@c", NpgsqlDbType.Varchar, specid);
             int result = command.ExecuteNonQuery();
             if (result == 1)
             {
@@ -156,7 +162,7 @@ namespace WPFSTUDENT
             Groups.Clear();
             NpgsqlCommand command = new NpgsqlCommand();
             command.Connection = connection;
-            command.CommandText = "SELECT number FROM group ORDER BY number";
+            command.CommandText = "SELECT number, course FROM group ORDER BY number";
             NpgsqlDataReader result = command.ExecuteReader();
             if (result.HasRows)
             {
