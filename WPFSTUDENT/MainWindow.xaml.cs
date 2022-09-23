@@ -23,41 +23,37 @@ namespace WPFSTUDENT
     {
 
         private NpgsqlConnection connection;
-        public ObservableCollection<Employee> Employees { get; set; }
-        public ObservableCollection<string> Codes { get; set; }
         
-        public ObservableCollection<string> Numbers { get; set; }
-        public Employee NewEmployee { get; set; }
-
-        
+        public ObservableCollection<Specialty> Specialitys { get; set; }
+        public ObservableCollection<Group> Groups { get; set; }
+        public ObservableCollection<Student> Students { get; set; }
+        public Student NewStudent { get; set; }
+        public Specialty NewSpeciality {get; set;}
+        public Group NewGroups { get; set; }
 
 
         public MainWindow()
         {
             InitializeComponent();
 
-            Employees = new ObservableCollection<Employee>();
-            Codes = new ObservableCollection<string>();
+            Specialitys = new ObservableCollection<Specialty>();
+            
 
-            Connect("localhost", "5432", "Denis", "1234", "students");
+            Connect("10.14.206.27", "5432", "Denis", "1234", "students");
 
-            Binding binding = new Binding();
-            binding.Source = Codes;
-            binding.Source = Numbers;
+            //Binding binding = new Binding();
+            //binding.Source = Codes;
+            //binding.Source = Numbers;
 
 
             DataContext = this;
         }
         private void Connect(string host, string port, string user, string pass, string dbname)
         {
-            string cs = string.Format("Host=localhost;Username=postgres;Password=1234;Database=students");
+            string cs = string.Format("Host=10.14.206.27;Username=student;Password=1234;Database=denis200");
             NpgsqlConnection nc = new NpgsqlConnection(cs);
             connection = new NpgsqlConnection(cs);
             connection.Open();
-
-
-
-
 
         }
 
@@ -68,7 +64,7 @@ namespace WPFSTUDENT
             EnableControl(true);
 
 
-            Employees.Add(NewEmployee);
+            Specialitys.Add(NewSpeciality);
             
 
 
@@ -77,15 +73,15 @@ namespace WPFSTUDENT
             if (CodeSpec.Length == 0) return;
             string NameSpec = textNameSpec.Text.Trim();
             if (NameSpec.Length == 0) return;
-            string qualification = textQualSpec.Text.Trim();
-            if (qualification.Length == 0) return;
+            string qualifiation = textQualSpec.Text.Trim();
+            if (qualifiation.Length == 0) return;
 
             NpgsqlCommand command = new NpgsqlCommand();
             command.Connection = connection;
-            command.CommandText = "INSERT INTO speciality(code, namespec, qualification) VALUES(@a, @b, @c)";
+            command.CommandText = "INSERT INTO speciality(code, namespec, qualifiation) VALUES(@a, @b, @c)";
             command.Parameters.AddWithValue("@a", NpgsqlDbType.Varchar, CodeSpec);
             command.Parameters.AddWithValue("@b", NpgsqlDbType.Varchar, NameSpec);
-            command.Parameters.AddWithValue("@c", NpgsqlDbType.Varchar, qualification);
+            command.Parameters.AddWithValue("@c", NpgsqlDbType.Varchar, qualifiation);
             
             int result = command.ExecuteNonQuery();
             if (result == 1)
@@ -97,18 +93,18 @@ namespace WPFSTUDENT
         }
         private void LoadSpec()
         {
-            Employees.Clear();
+            Specialitys.Clear();
 
             NpgsqlCommand command = new NpgsqlCommand();
             command.Connection = connection;
-            command.CommandText = "SELECT code(speciality), namespec(speciality), speciality(group)";
+            command.CommandText = "SELECT code(speciality), namespec(speciality), spec(group)";
             var result = command.ExecuteReader();
             if (result == null) return;
             if (result.HasRows)
             {
                 while (result.Read())
                 {
-                    Employees.Add(new Employee(result.GetString(0), result.GetString(1), result.GetInt32(2)));
+                    Specialitys.Add(new Specialty(result.GetString(0), result.GetString(1), result.GetString(2)));
                 }
             }
             result.Close();
@@ -127,20 +123,20 @@ namespace WPFSTUDENT
                 }
             }
         }
-        
+
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             EnableControl(true);
 
-            Employees.Add(NewEmployee);
+            Groups.Add(NewGroups);
 
 
             string NumberGroup = textNumberGroup.Text.Trim();
             if (NumberGroup.Length == 0) return;
             string CourseGroup = textCourse.Text.Trim();
             if (CourseGroup.Length == 0) return;
-            
+
             NpgsqlCommand command = new NpgsqlCommand();
             command.Connection = connection;
             command.CommandText = "INSERT INTO group(number, course) VALUES(@a, @b)";
@@ -157,7 +153,7 @@ namespace WPFSTUDENT
 
         private void LoadGroup()
         {
-            Employees.Clear();
+            Groups.Clear();
             NpgsqlCommand command = new NpgsqlCommand();
             command.Connection = connection;
             command.CommandText = "SELECT number FROM group ORDER BY number";
@@ -166,20 +162,20 @@ namespace WPFSTUDENT
             {
                 while (result.Read())
                 {
-                    Numbers.Add(result.GetString(0));
+                    Groups.Add(new Group(result.GetString(0), result.GetString(1)));
                 }
             }
             result.Close();
         }
-       
+
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             EnableControl(true);
 
-            
 
-            Employees.Add(NewEmployee);
+
+            Students.Add(NewStudent);
 
             string SurName = Surname.Text.Trim();
             if (SurName.Length == 0) return;
@@ -196,11 +192,11 @@ namespace WPFSTUDENT
             if (result == 1)
             {
                 MessageBox.Show("Студент успешно добавлен!");
-                
+
             }
         }
 
-        
+
 
     }
 }
