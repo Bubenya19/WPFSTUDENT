@@ -37,8 +37,8 @@ namespace WPFSTUDENT
             InitializeComponent();
 
             Specialitys = new ObservableCollection<Specialty>();
-            
-
+            Groups = new ObservableCollection<Group>();
+            Students = new ObservableCollection<Student>();
             Connect("10.14.206.27", "5432", "Denis", "1234", "students");
 
             Binding binding = new Binding();
@@ -151,7 +151,7 @@ namespace WPFSTUDENT
 
             NpgsqlCommand command = new NpgsqlCommand();
             command.Connection = connection;
-            command.CommandText = "INSERT INTO group(number, course), speciality(idspec) VALUES(@a, @b)";
+            command.CommandText = "INSERT INTO \"group\"(number, course) VALUES(@a, @b)";
             command.Parameters.AddWithValue("@a", NpgsqlDbType.Varchar, NumberGroup);
             command.Parameters.AddWithValue("@b", NpgsqlDbType.Varchar, CourseGroup);
             
@@ -168,7 +168,7 @@ namespace WPFSTUDENT
             Groups.Clear();
             NpgsqlCommand command = new NpgsqlCommand();
             command.Connection = connection;
-            command.CommandText = "SELECT number, course FROM group ORDER BY number";
+            command.CommandText = "SELECT number, course FROM \"group\" ORDER BY number";
             NpgsqlDataReader result = command.ExecuteReader();
             if (result.HasRows)
             {
