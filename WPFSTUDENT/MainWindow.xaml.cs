@@ -53,6 +53,7 @@ namespace WPFSTUDENT
             
             DataContext = this;
         }
+      
         private void Connect(string host, string port, string user, string pass, string dbname)
         {
             string cs = string.Format("Host=10.14.206.27;Username=student;Password=1234;Database=denis200");
@@ -129,26 +130,31 @@ namespace WPFSTUDENT
             }
         }
 
+        private ListBox GetSpecList()
+        {
+            return SpecList;
+        }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
+            
             EnableControl(true);
-
             Groups.Add(NewGroups);
 
 
             string NumberGroup = textNumberGroup.Text.Trim();
             if (NumberGroup.Length == 0) return;
+           
             string CourseGroup = textCourse.Text.Trim();
             if (CourseGroup.Length == 0) return;
-            int specid = textSpecid.Text.Trim();
-            if(specid.Length == 0) return; 
+
+
             NpgsqlCommand command = new NpgsqlCommand();
             command.Connection = connection;
-            command.CommandText = "INSERT INTO group(number, course) VALUES(@a, @b)";
+            command.CommandText = "INSERT INTO group(number, course), speciality(idspec) VALUES(@a, @b)";
             command.Parameters.AddWithValue("@a", NpgsqlDbType.Varchar, NumberGroup);
             command.Parameters.AddWithValue("@b", NpgsqlDbType.Varchar, CourseGroup);
-            command.Parameters.AddWithValue("@c", NpgsqlDbType.Varchar, specid);
+            
             int result = command.ExecuteNonQuery();
             if (result == 1)
             {

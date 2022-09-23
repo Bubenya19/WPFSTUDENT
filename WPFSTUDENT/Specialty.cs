@@ -19,9 +19,6 @@ namespace WPFSTUDENT
         {
             Codes = code;
 
-
-            
-
             Namespec = namespec;
             Qualification = qualification;
         }

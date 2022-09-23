@@ -37,7 +37,7 @@
                 <ListBox Height="150" Name="SpecList">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Namespec}"></TextBlock>
+                            <TextBlock Name="box" Text="{Binding Namespec}"></TextBlock>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>

@@ -12,14 +12,14 @@ namespace WPFSTUDENT
         public static int GroupID = 0;
         private string number;
         private string course;
-
+       
 
         public Group(string number, string course)
         {
             Number1 = number;
 
             Course = course;
-           
+            
         }
 
         public string Number1
