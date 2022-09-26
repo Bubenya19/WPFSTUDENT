@@ -9,7 +9,7 @@ namespace WPFSTUDENT
     public class PageControl
     {
         private static Main_Page mainpage;
-        public static Main_Page main_page
+        public static Main_Page Main_page
         {
             get
             {
@@ -19,7 +19,7 @@ namespace WPFSTUDENT
             }
         }
         private static StudentCreatePage studcr_page;
-        public static StudentCreatePage stud_create
+        public static StudentCreatePage Stud_create
         {
             get
             {
@@ -30,7 +30,7 @@ namespace WPFSTUDENT
         }
 
         private static StudentEditPage studE_page;
-        public static StudentEditPage stud_edit
+        public static StudentEditPage Stud_edit
         {
             get
             {
@@ -41,7 +41,7 @@ namespace WPFSTUDENT
         }
 
         private static StudentDeletePage studD_page;
-        public static StudentDeletePage stud_delete
+        public static StudentDeletePage Stud_delete
         {
             get
             {
@@ -55,7 +55,7 @@ namespace WPFSTUDENT
 
 
         private static GroupCreatePage groupcr_page;
-        public static GroupCreatePage group_create
+        public static GroupCreatePage Group_create
         {
             get
             {
@@ -66,7 +66,7 @@ namespace WPFSTUDENT
         }
 
         private static GroupEditPage groupE_page;
-        public static GroupEditPage group_edit
+        public static GroupEditPage Group_edit
         {
             get
             {
@@ -78,7 +78,7 @@ namespace WPFSTUDENT
 
 
         private static GroupDeletePage groupD_page;
-        public static GroupDeletePage group_delete
+        public static GroupDeletePage Group_delete
         {
             get
             {
@@ -92,7 +92,7 @@ namespace WPFSTUDENT
 
 
         private static SpecCreatePage speccr_page;
-        public static SpecCreatePage spec_create
+        public static SpecCreatePage Spec_create
         {
             get
             {
@@ -107,7 +107,7 @@ namespace WPFSTUDENT
 
 
         private static SpecEditPage specE_page;
-        public static SpecEditPage spec_edit
+        public static SpecEditPage Spec_edit
         {
             get
             {
@@ -118,7 +118,7 @@ namespace WPFSTUDENT
         }
 
         private static SpecDeletePage specD_page;
-        public static SpecDeletePage spec_delete
+        public static SpecDeletePage Spec_delete
         {
             get
             {

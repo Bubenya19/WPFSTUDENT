@@ -8,7 +8,36 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="SpecEditPage">
 
-    <Grid>
-        
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+
+        <GroupBox Grid.Column="0" Margin="10" Header="Выберите специальность"  Foreground="Purple" BorderBrush="#FF9416BB" FontSize="14" FontWeight="Bold">
+            <StackPanel Name="NewEmployeePanel1234" Grid.Column="0"  Margin="10" Background="#FFE7F3F2" DataContext="{Binding NewGroups}">
+                <TextBlock></TextBlock>
+                <ListBox Height="350" Name="SpecList1">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Name="box" Text="{Binding Namespec}"></TextBlock>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox Grid.Column="1" Margin="10" Header="Укажите новые данные"  Foreground="Purple" BorderBrush="#FF9416BB" FontSize="14" FontWeight="Bold">
+            <StackPanel Name="NewEmployeePanel343" Grid.Column="0"  Margin="10" Background="#FFE7F3F2" DataContext="{Binding NewSpeciality}">
+                <Label>Код</Label>
+                <TextBox Name="textEditCode"></TextBox>
+                <Label>Наименование</Label>
+                <TextBox Name="textEditName"></TextBox>
+                <Label>Квалификация</Label>
+                <TextBox Name="textEditQual"></TextBox>
+                <Button Click="UpdateSpecEdit" Content="Внести изменения"></Button>
+            </StackPanel>
+        </GroupBox>
     </Grid>
 </Page>

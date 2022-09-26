@@ -38,18 +38,12 @@
                 <TextBox></TextBox>
                 <Label>Отчество</Label>
                 <TextBox></TextBox>
-                <Button Content="Добавить"></Button>
+                <Button Content="Добавить студента"></Button>
             </StackPanel>
         </GroupBox>
         
         
-        
-        
-        
-        
-        
-        
-        
+     
         
     </Grid>
 </Page>

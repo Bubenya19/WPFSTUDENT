@@ -8,7 +8,39 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="SpecCreatePage">
 
-    <Grid>
-        
+    <Grid Background="White">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+
+        <GroupBox Grid.Column="0" Margin="10" Header="Специальности"  Foreground="Purple" BorderBrush="#FF9416BB" FontSize="14" FontWeight="Bold">
+            <StackPanel Name="NewEmployeePanel1" Grid.Column="0"  Margin="10" Background="#FFE7F3F2" DataContext="{Binding NewGroups}">
+                <TextBlock></TextBlock>
+                <ListBox Height="350" Name="SpecList">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Name="box" Text="{Binding Namespec}"></TextBlock>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+        </GroupBox>
+
+
+        <GroupBox Grid.Column="1" Margin="10" Header="Укажите необходимые данные"  Foreground="Purple" BorderBrush="#FF9416BB" FontSize="14" FontWeight="Bold">
+            <StackPanel Name="NewEmployeePanel" Grid.Column="0"  Margin="10" Background="#FFE7F3F2" DataContext="{Binding NewSpeciality}">
+                <Label>Код</Label>
+                <TextBox Name="textCodeSpec"></TextBox>
+                <Label>Наименование</Label>
+                <TextBox Name="textNameSpec"></TextBox>
+                <Label>Квалификация</Label>
+                <TextBox Name="textQualSpec"></TextBox>
+                <Button Name="CreateSpecButton" Click="CreateSpec" Content="Добавить специальность"></Button>
+            </StackPanel>
+        </GroupBox>
+
     </Grid>
 </Page>

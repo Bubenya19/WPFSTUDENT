@@ -5,58 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFSTUDENT"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="900">
+        Height="450" Width="800"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        ResizeMode="CanResizeWithGrip">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-        </Grid.ColumnDefinitions>
         
-        <GroupBox Grid.Column="0" Margin="10" Header="Специальности"  Foreground="Purple" BorderBrush="#FF9416BB" FontSize="16" FontWeight="Bold">
-            <StackPanel Name="NewEmployeePanel" Grid.Column="0"  Margin="10" Background="#FFE7F3F2" DataContext="{Binding NewSpeciality}">
-                <TextBlock></TextBlock>
-                <TextBlock></TextBlock>
-                <TextBlock></TextBlock>
-                <TextBlock></TextBlock>
-                <Button Name="CreateSpec" Content="Создать" Click="StCr"></Button>
-                <TextBlock></TextBlock>
-                <Button Name="EditSpec" Content="Редактировать" Click="StEd"></Button>
-                <TextBlock></TextBlock>
-                <Button Name="DeleteSpec" Content="Удалить" Click="StDel"></Button> 
-            </StackPanel>
-        </GroupBox>
-        
-        <GroupBox Grid.Column="1" Margin="10" Header="Группы"  Foreground="Purple" BorderBrush="#FF9416BB" FontSize="16" FontWeight="Bold">
-            <StackPanel Name="NewEmployeePanel1" Grid.Column="1" Margin="10" Background="#FFE7F3F2" DataContext="{Binding NewGroups}">
-                <TextBlock></TextBlock>
-                <TextBlock></TextBlock>
-                <TextBlock></TextBlock>
-                <TextBlock></TextBlock>
-                <Button Name="CreateGroup" Content="Создать"></Button>
-                <TextBlock></TextBlock>
-                <Button Name="Editgroup" Content="Редактировать"></Button>
-                <TextBlock></TextBlock>
-                <Button Name="DeleteGroup" Content="Удалить"></Button>
-            </StackPanel>
-        </GroupBox>
-        
-        <GroupBox Grid.Column="2" Margin="10" Header="Студенты"  Foreground="Purple" BorderBrush="#FF9416BB" FontSize="16" FontWeight="Bold">
-            <StackPanel Name="NewEmployeePanel2" Grid.Column="2" Margin="10" Background="#FFE7F3F2" DataContext="{Binding NewStudent}">
-                <TextBlock></TextBlock>
-                <TextBlock></TextBlock>
-                <TextBlock></TextBlock>
-                <TextBlock></TextBlock>
-                <Button Name="CreateStud" Content="Создать"></Button>
-                <TextBlock></TextBlock>
-                <Button Name="EditStud" Content="Редактировать"></Button>
-                <TextBlock></TextBlock>
-                <Button Name="DeleteStud" Content="Удалить"></Button>
-                
-                
-            </StackPanel>
-        </GroupBox>
-
         <Frame Grid.Row="1" Name="MainFrame" NavigationUIVisibility="Hidden"></Frame>
     </Grid>
 </Window>

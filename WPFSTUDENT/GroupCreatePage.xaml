@@ -8,7 +8,39 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="GroupCreatePage">
 
-    <Grid>
-        
+    <Grid Background="White">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+
+        <GroupBox Grid.Column="0" Margin="10" Header="Группы"  Foreground="Purple" BorderBrush="#FF9416BB" FontSize="14" FontWeight="Bold">
+            <StackPanel Name="NewEmployeePanel1" Grid.Column="0"  Margin="10" Background="#FFE7F3F2" DataContext="{Binding NewSpeciality}">
+                <TextBlock></TextBlock>
+                <ListBox Height="350" Name="StudList">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Name="box" Text="{Binding Namespec}"></TextBlock>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+        </GroupBox>
+
+
+        <GroupBox Grid.Column="1" Margin="10" Header="Укажите необходимые данные"  Foreground="Purple" BorderBrush="#FF9416BB" FontSize="14" FontWeight="Bold">
+            <StackPanel Name="NewEmployeePanel" Grid.Column="0"  Margin="10" Background="#FFE7F3F2" DataContext="{Binding NewSpeciality}">
+                <Label>Номер группы</Label>
+                <TextBox></TextBox>
+                <Label>Курс</Label>
+                <TextBox></TextBox>
+                <Label>Специальность</Label>
+                <TextBox></TextBox>
+                <Button Content="Добавить группу"></Button>
+            </StackPanel>
+        </GroupBox>
+
     </Grid>
 </Page>
