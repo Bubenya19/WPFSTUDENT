@@ -50,7 +50,7 @@ namespace WPFSTUDENT
             SpecList.SetBinding(ListBox.ItemsSourceProperty, binding);
             GroupList.SetBinding(ListBox.ItemsSourceProperty, binding1); 
             LoadSpec();
-            
+            LoadGroup();
             DataContext = this;
         }
       
@@ -196,7 +196,7 @@ namespace WPFSTUDENT
 
             NpgsqlCommand command = new NpgsqlCommand();
             command.Connection = connection;
-            command.CommandText = "INSERT INTO \"Position\"(\"Position\") VALUES(@a, @b)";
+            command.CommandText = "INSERT INTO student(surname, name) VALUES(@a, @b)";
             command.Parameters.AddWithValue("@a", NpgsqlDbType.Varchar, SurName);
             command.Parameters.AddWithValue("@b", NpgsqlDbType.Varchar, StName);
 
