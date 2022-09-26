@@ -11,7 +11,7 @@ namespace WPFSTUDENT
         public static int SpecialityID = 0;
         private string code;
         private string namespec;
-        private string qualification; 
+        private string qualification;
 
 
 

@@ -1,0 +1,34 @@
+﻿<Page x:Class="WPFSTUDENT.StudentDeletePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPFSTUDENT"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="500"
+      Title="StudentDeletePage">
+
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            
+
+        </Grid.ColumnDefinitions>
+
+        <GroupBox Grid.Column="0" Margin="10" Header="Выберите студента"  Foreground="Purple" BorderBrush="#FF9416BB" FontSize="14" FontWeight="Bold">
+            <StackPanel Name="NewEmployeePanel1234" Grid.Column="0"  Margin="10" Background="#FFE7F3F2" DataContext="{Binding NewSpeciality}">
+                <TextBlock></TextBlock>
+                <ListBox Height="350" Name="StudList2">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Name="box" Text="{Binding Namespec}"></TextBlock>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <Button Content="Удалить студента"></Button>
+            </StackPanel>
+        </GroupBox>
+
+       
+    </Grid>
+</Page>

@@ -101,22 +101,44 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Group.cs" />
-    <Compile Include="GroupPage.xaml.cs">
-      <DependentUpon>GroupPage.xaml</DependentUpon>
+    <Compile Include="GroupCreatePage.xaml.cs">
+      <DependentUpon>GroupCreatePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="HZprost.cs" />
+    <Compile Include="GroupDeletePage.xaml.cs">
+      <DependentUpon>GroupDeletePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GroupEditPage.xaml.cs">
+      <DependentUpon>GroupEditPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SpecCreatePage.xaml.cs">
+      <DependentUpon>SpecCreatePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SpecDeletePage.xaml.cs">
+      <DependentUpon>SpecDeletePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SpecEditPage.xaml.cs">
+      <DependentUpon>SpecEditPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Specialty.cs" />
-    <Compile Include="SpecPage.xaml.cs">
-      <DependentUpon>SpecPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Student.cs" />
-    <Compile Include="StudentPage.xaml.cs">
-      <DependentUpon>StudentPage.xaml</DependentUpon>
+    <Compile Include="StudentCreatePage.xaml.cs">
+      <DependentUpon>StudentCreatePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="vibor.xaml.cs">
-      <DependentUpon>vibor.xaml</DependentUpon>
+    <Compile Include="StudentDeletePage.xaml.cs">
+      <DependentUpon>StudentDeletePage.xaml</DependentUpon>
     </Compile>
-    <Page Include="GroupPage.xaml">
+    <Compile Include="StudentEditPage.xaml.cs">
+      <DependentUpon>StudentEditPage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="GroupCreatePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GroupDeletePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GroupEditPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -132,20 +154,40 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="SpecPage.xaml">
+    <Page Include="Main_Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="StudentPage.xaml">
+    <Page Include="SpecCreatePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="vibor.xaml">
+    <Page Include="SpecDeletePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SpecEditPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StudentCreatePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StudentDeletePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StudentEditPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Main_Page.xaml.cs">
+      <DependentUpon>Main_Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageControl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

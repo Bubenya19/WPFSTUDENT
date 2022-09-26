@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace WPFSTUDENT
 {
     /// <summary>
-    /// Логика взаимодействия для SpecPage.xaml
+    /// Логика взаимодействия для GroupEditPage.xaml
     /// </summary>
-    public partial class SpecPage : Page
+    public partial class GroupEditPage : Page
     {
-        public SpecPage()
+        public GroupEditPage()
         {
             InitializeComponent();
         }

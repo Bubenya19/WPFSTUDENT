@@ -16,15 +16,13 @@ using System.Windows.Shapes;
 namespace WPFSTUDENT
 {
     /// <summary>
-    /// Логика взаимодействия для vibor.xaml
+    /// Логика взаимодействия для StudentEditPage.xaml
     /// </summary>
-    public partial class vibor : Page
+    public partial class StudentEditPage : Page
     {
-        public vibor()
+        public StudentEditPage()
         {
             InitializeComponent();
-
-
         }
     }
 }

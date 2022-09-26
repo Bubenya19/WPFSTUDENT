@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace WPFSTUDENT
 {
     /// <summary>
-    /// Логика взаимодействия для StudentPage.xaml
+    /// Логика взаимодействия для GroupCreatePage.xaml
     /// </summary>
-    public partial class StudentPage : Page
+    public partial class GroupCreatePage : Page
     {
-        public StudentPage()
+        public GroupCreatePage()
         {
             InitializeComponent();
         }
