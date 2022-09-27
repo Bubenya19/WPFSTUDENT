@@ -16,7 +16,7 @@
         </Grid.ColumnDefinitions>
 
         <GroupBox Grid.Column="0" Margin="10" Header="Выберите специальность"  Foreground="Purple" BorderBrush="#FF9416BB" FontSize="14" FontWeight="Bold">
-            <StackPanel Name="NewEmployeePanel1234" Grid.Column="0"  Margin="10" Background="#FFE7F3F2" DataContext="{Binding NewGroups}">
+            <StackPanel Name="NewEmployeePanel1234" Grid.Column="0"  Margin="10" Background="#FFE7F3F2" DataContext="{Binding NewSpeciality}">
                 <TextBlock></TextBlock>
                 <ListBox Height="350" Name="SpecList1">
                     <ListBox.ItemTemplate>

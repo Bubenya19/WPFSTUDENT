@@ -7,22 +7,23 @@ using System.ComponentModel;
 
 namespace WPFSTUDENT
 {
-    public class Group
+    public class Group : INotifyPropertyChanged
     {
-        public static int GroupID = 0;
-        private string number;
+        
+        private int number;
         private string course;
-
-
-        public Group(string number, string course)
+        private int spec;
+        
+        public Group(int number, string course )
         {
             Number1 = number;
 
             Course = course;
-
+            
+            
         }
-
-        public string Number1
+       
+        public int Number1
         {
             get => number;
             set
@@ -39,6 +40,17 @@ namespace WPFSTUDENT
             {
                 course = value;
                 OnPropertyChanged(new PropertyChangedEventArgs("Course"));
+            }
+
+        }
+
+        public int Spec
+        {
+            get => spec;
+            set
+            {
+                spec = value;
+                OnPropertyChanged(new PropertyChangedEventArgs("Spec"));
             }
 
         }

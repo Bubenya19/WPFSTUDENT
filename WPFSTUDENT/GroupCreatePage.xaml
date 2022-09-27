@@ -19,7 +19,7 @@
         <GroupBox Grid.Column="0" Margin="10" Header="Группы"  Foreground="Purple" BorderBrush="#FF9416BB" FontSize="14" FontWeight="Bold">
             <StackPanel Name="NewEmployeePanel1" Grid.Column="0"  Margin="10" Background="#FFE7F3F2" DataContext="{Binding NewSpeciality}">
                 <TextBlock></TextBlock>
-                <ListBox Height="350" Name="StudList">
+                <ListBox Height="350" Name="GrList">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <TextBlock Name="box" Text="{Binding Namespec}"></TextBlock>
@@ -31,14 +31,23 @@
 
 
         <GroupBox Grid.Column="1" Margin="10" Header="Укажите необходимые данные"  Foreground="Purple" BorderBrush="#FF9416BB" FontSize="14" FontWeight="Bold">
-            <StackPanel Name="NewEmployeePanel" Grid.Column="0"  Margin="10" Background="#FFE7F3F2" DataContext="{Binding NewSpeciality}">
+            <StackPanel Name="NewEmployeePanel" Grid.Column="0"  Margin="10" Background="#FFE7F3F2" DataContext="{Binding ElementName=NewGroup, Path=SelectedItem}">
                 <Label>Номер группы</Label>
-                <TextBox></TextBox>
+                <TextBox Name="textNumberGroup" Text="{Binding Number1, UpdateSourceTrigger=PropertyChanged}"></TextBox>
                 <Label>Курс</Label>
-                <TextBox></TextBox>
+                <TextBox Name="textCourseGroup" Text="{Binding Course, UpdateSourceTrigger=PropertyChanged}"></TextBox>
                 <Label>Специальность</Label>
-                <TextBox></TextBox>
-                <Button Content="Добавить группу"></Button>
+                <ComboBox Name="cmbGSpecId" Margin="10" SelectedItem="{Binding ElementName=tupa, Path=SelectedItem.Specialty}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock>
+                                <Run Text="{Binding Codes, UpdateSourceTrigger=PropertyChanged}"></Run>
+                                <Run Text="{Binding Namespec, UpdateSourceTrigger=PropertyChanged}"></Run>
+                            </TextBlock>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <Button Click="CreateGroup" Content="Добавить группу"></Button>
             </StackPanel>
         </GroupBox>
 

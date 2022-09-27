@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 using System.ComponentModel;
 namespace WPFSTUDENT
 {
-    public class Specialty
+    public class Specialty : INotifyPropertyChanged
     {
         public static int SpecialityID = 0;
-        private int code;
+        public int code;
         private string namespec;
         private string qualification;
 

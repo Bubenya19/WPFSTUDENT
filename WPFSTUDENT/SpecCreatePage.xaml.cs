@@ -103,7 +103,7 @@ namespace WPFSTUDENT
 
         private void Connect(string host, string port, string user, string pass, string dbname)
         {
-            string cs = string.Format("Host=10.14.206.27;Username=student;Password=1234;Database=denis200");
+            string cs = string.Format("Host=localhost;Username=postgres;Password=1234;Database=students");
             NpgsqlConnection nc = new NpgsqlConnection(cs);
             connection = new NpgsqlConnection(cs);
             connection.Open();

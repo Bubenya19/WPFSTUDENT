@@ -17,7 +17,7 @@
         </Grid.ColumnDefinitions>
 
         <GroupBox Grid.Column="0" Margin="10" Header="Специальности"  Foreground="Purple" BorderBrush="#FF9416BB" FontSize="14" FontWeight="Bold">
-            <StackPanel Name="NewEmployeePanel1" Grid.Column="0"  Margin="10" Background="#FFE7F3F2" DataContext="{Binding NewGroups}">
+            <StackPanel Name="NewEmployeePanel1" Grid.Column="0"  Margin="10" Background="#FFE7F3F2" DataContext="{Binding NewSpeciality}">
                 <TextBlock></TextBlock>
                 <ListBox Height="350" Name="SpecList">
                     <ListBox.ItemTemplate>
@@ -31,13 +31,13 @@
 
 
         <GroupBox Grid.Column="1" Margin="10" Header="Укажите необходимые данные"  Foreground="Purple" BorderBrush="#FF9416BB" FontSize="14" FontWeight="Bold">
-            <StackPanel Name="NewEmployeePanel" Grid.Column="0"  Margin="10" Background="#FFE7F3F2" DataContext="{Binding NewSpeciality}">
+            <StackPanel Name="NewEmployeePanel" Grid.Column="0"  Margin="10" Background="#FFE7F3F2" DataContext="{Binding ElementName=NewSpeciality, Path=SelectedItem}">
                 <Label>Код</Label>
-                <TextBox Name="textCodeSpec"></TextBox>
+                <TextBox Name="textCodeSpec" Text="{Binding Codes, UpdateSourceTrigger=PropertyChanged}"></TextBox>
                 <Label>Наименование</Label>
-                <TextBox Name="textNameSpec"></TextBox>
+                <TextBox Name="textNameSpec" Text="{Binding Namespec, UpdateSourceTrigger=PropertyChanged}"></TextBox>
                 <Label>Квалификация</Label>
-                <TextBox Name="textQualSpec"></TextBox>
+                <TextBox Name="textQualSpec" Text="{Binding Qualification, UpdateSourceTrigger=PropertyChanged}"></TextBox>
                 <Button Name="CreateSpecButton" Click="CreateSpec" Content="Добавить специальность"></Button>
             </StackPanel>
         </GroupBox>

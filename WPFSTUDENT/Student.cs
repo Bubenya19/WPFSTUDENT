@@ -7,7 +7,7 @@ using System.ComponentModel;
 
 namespace WPFSTUDENT
 {
-    public class Student
+    public class Student : INotifyPropertyChanged
     {
         public static int StudentID = 0;
         private string surname;
