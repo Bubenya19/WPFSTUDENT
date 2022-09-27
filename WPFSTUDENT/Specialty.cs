@@ -9,13 +9,13 @@ namespace WPFSTUDENT
     public class Specialty
     {
         public static int SpecialityID = 0;
-        private string code;
+        private int code;
         private string namespec;
         private string qualification;
 
 
 
-        public Specialty(string code, string namespec, string qualification)
+        public Specialty(int code, string namespec, string qualification)
         {
             Codes = code;
 
@@ -23,7 +23,7 @@ namespace WPFSTUDENT
             Qualification = qualification;
         }
 
-        public string Codes
+        public int Codes
         {
             get => code;
             set

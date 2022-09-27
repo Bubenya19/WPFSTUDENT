@@ -29,14 +29,22 @@
         </GroupBox>
 
         <GroupBox Grid.Column="1" Margin="10" Header="Укажите новые данные"  Foreground="Purple" BorderBrush="#FF9416BB" FontSize="14" FontWeight="Bold">
-            <StackPanel Name="NewEmployeePanel343" Grid.Column="0"  Margin="10" Background="#FFE7F3F2" DataContext="{Binding NewSpeciality}">
+            <StackPanel Name="specpanel" Grid.Column="0"  Margin="10" Background="#FFE7F3F2" DataContext="{Binding ElementName=SpecList1, Path=SelectedItem}">
                 <Label>Код</Label>
-                <TextBox Name="textEditCode"></TextBox>
+                <TextBox Name="textEditCode" Text="{Binding Codes, UpdateSourceTrigger=PropertyChanged}"></TextBox>
                 <Label>Наименование</Label>
-                <TextBox Name="textEditName"></TextBox>
+                <TextBox Name="textEditName" Text="{Binding Namespec, UpdateSourceTrigger=PropertyChanged}"></TextBox>
                 <Label>Квалификация</Label>
-                <TextBox Name="textEditQual"></TextBox>
+                <TextBox Name="textEditQual" Text="{Binding Qualification, UpdateSourceTrigger=PropertyChanged}"></TextBox>
                 <Button Click="UpdateSpecEdit" Content="Внести изменения"></Button>
+                <TextBlock></TextBlock>
+                <TextBlock></TextBlock>
+                <TextBlock></TextBlock>
+                <TextBlock></TextBlock>
+                <TextBlock></TextBlock>
+                <TextBlock></TextBlock>
+                <TextBlock></TextBlock>
+                <Button Name="textDeleteCode" Click="DelSpecDelete" Content="Удалить специальность" BorderBrush="Red" Foreground="Red" Background="#FFFFDDDD"/>
             </StackPanel>
         </GroupBox>
     </Grid>

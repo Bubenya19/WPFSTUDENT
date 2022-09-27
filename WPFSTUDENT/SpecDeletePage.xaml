@@ -18,14 +18,15 @@
         <GroupBox Grid.Column="0" Margin="10" Header="Выберите специальность"  Foreground="Purple" BorderBrush="#FF9416BB" FontSize="14" FontWeight="Bold">
             <StackPanel Name="NewEmployeePanel1234" Grid.Column="0"  Margin="10" Background="#FFE7F3F2" DataContext="{Binding NewSpeciality}">
                 <TextBlock></TextBlock>
-                <ListBox Height="350" Name="StudList2">
+                <TextBox Name="textDeleteCode" Visibility="Visible" Text="{Binding code}"></TextBox>
+                <ListBox Height="350" Name="SpecList2" Visibility="Visible">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <TextBlock Name="box" Text="{Binding Namespec}"></TextBlock>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
-                <Button Content="Удалить специальность"></Button>
+                <Button Click="DelSpecDelete" Content="Удалить специальность"></Button>
             </StackPanel>
         </GroupBox>
     </Grid>

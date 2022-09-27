@@ -29,7 +29,7 @@ namespace WPFSTUDENT
         public SpecEditPage()
         {
             InitializeComponent();
-            Connect("localhost", "5432", "Denis", "1234", "students");
+            Connect("10.14.206.27", "5432", "Denis", "1234", "denis200");
 
             Specialitys = new ObservableCollection<Specialty>();
 
@@ -48,20 +48,19 @@ namespace WPFSTUDENT
         {
             Specialitys.Add(NewSpeciality);
 
-
-            string CodeSpec = textEditCode.Text.Trim();
-            if (CodeSpec.Length == 0) return;
-
+            
+            int CodeSpec = Convert.ToInt32(textEditCode.Text.Trim());
+            
             string NameSpec = textEditName.Text.Trim();
-            if (NameSpec.Length == 0) return;
+            if (CodeSpec == 0 && NameSpec.Length == 0) return;
             string qualification = textEditQual.Text.Trim();
             if (qualification.Length == 0) return;
 
 
             NpgsqlCommand command = new NpgsqlCommand();
             command.Connection = connection;
-            command.CommandText = "UPDATE speciality(code, namespec, qualification) VALUES(@a, @b, @c)";
-            command.Parameters.AddWithValue("@a", NpgsqlDbType.Varchar, CodeSpec);
+            command.CommandText = "UPDATE speciality SET code = @a, namespec = @b, qualification = @c";
+            command.Parameters.AddWithValue("@a", NpgsqlDbType.Integer, CodeSpec);
             command.Parameters.AddWithValue("@b", NpgsqlDbType.Varchar, NameSpec);
             command.Parameters.AddWithValue("@c", NpgsqlDbType.Varchar, qualification);
 
@@ -93,18 +92,64 @@ namespace WPFSTUDENT
             {
                 while (result.Read())
                 {
-                    Specialitys.Add(new Specialty(result.GetString(0), result.GetString(1), result.GetString(2)));
+                    Specialitys.Add(new Specialty(result.GetInt32(0), result.GetString(1), result.GetString(2)));
                 }
             }
             result.Close();
 
         }
 
+        private void DelSpecDelete(object sender, RoutedEventArgs e)
+        {
+            Specialitys.Add(NewSpeciality);
 
+
+            int CodeSpec = Convert.ToInt32(textEditCode.Text.Trim());
+
+            
+            
+            if (CodeSpec == 0) return;
+            
+
+
+            NpgsqlCommand command = new NpgsqlCommand();
+            command.Connection = connection;
+            command.CommandText = "DELETE FROM speciality WHERE code = @a ";
+            command.Parameters.AddWithValue("@a", NpgsqlDbType.Integer, CodeSpec);
+           
+            int result = command.ExecuteNonQuery();
+            if (result == 1)
+            {
+                MessageBox.Show("Специальность удалена.");
+                LoadSpec1();
+            }
+        }
+
+
+        private void LoadSpec1()
+        {
+
+
+
+            NpgsqlCommand command = new NpgsqlCommand();
+
+            command.Connection = connection;
+            command.CommandText = "SELECT code, namespec, qualification FROM speciality ORDER BY code";
+            NpgsqlDataReader result = command.ExecuteReader();
+            if (result.HasRows)
+            {
+                while (result.Read())
+                {
+                    Specialitys.Add(new Specialty(result.GetInt32(0), result.GetString(1), result.GetString(2)));
+                }
+            }
+            result.Close();
+
+        }
 
         private void Connect(string host, string port, string user, string pass, string dbname)
         {
-            string cs = string.Format("Host=localhost;Username=postgres;Password=1234;Database=students");
+            string cs = string.Format("Host=10.14.206.27;Username=student;Password=1234;Database=denis200");
             NpgsqlConnection nc = new NpgsqlConnection(cs);
             connection = new NpgsqlConnection(cs);
             connection.Open();
