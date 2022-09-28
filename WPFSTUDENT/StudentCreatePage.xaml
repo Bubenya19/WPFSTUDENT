@@ -32,12 +32,25 @@
 
         <GroupBox Grid.Column="1" Margin="10" Header="Укажите необходимые данные"  Foreground="Purple" BorderBrush="#FF9416BB" FontSize="14" FontWeight="Bold">
             <StackPanel Name="NewEmployeePanel" Grid.Column="0"  Margin="10" Background="#FFE7F3F2" DataContext="{Binding NewSpeciality}">
+                <Label>Телефон</Label>
+                <TextBox Name="textPhone"></TextBox>
                 <Label>Фамилия</Label>
-                <TextBox></TextBox>
+                <TextBox Name="textSurname"></TextBox>
                 <Label>Имя</Label>
-                <TextBox></TextBox>
+                <TextBox Name="textName"></TextBox>
                 <Label>Отчество</Label>
-                <TextBox></TextBox>
+                <TextBox Name="textPatronymic"></TextBox>
+                <Label>Выберите группу</Label>
+                <ComboBox Name="cmbGStudId" Margin="10" SelectedItem="{Binding ElementName=tupa, Path=SelectedItem.Specialty}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock>
+                                <Run Text="{Binding Codes, UpdateSourceTrigger=PropertyChanged}"></Run>
+                                <Run Text="{Binding Namespec, UpdateSourceTrigger=PropertyChanged}"></Run>
+                            </TextBlock>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
                 <Button Content="Добавить студента"></Button>
             </StackPanel>
         </GroupBox>

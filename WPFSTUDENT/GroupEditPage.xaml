@@ -31,12 +31,19 @@
         <GroupBox Grid.Column="1" Margin="10" Header="Укажите новые данные"  Foreground="Purple" BorderBrush="#FF9416BB" FontSize="14" FontWeight="Bold">
             <StackPanel Name="NewEmployeePanel343" Grid.Column="0"  Margin="10" Background="#FFE7F3F2" DataContext="{Binding NewSpeciality}">
                 <Label>Номер группы</Label>
-                <TextBox></TextBox>
+                <TextBox Name="NumberGr"></TextBox>
                 <Label>Курс</Label>
-                <TextBox></TextBox>
+                <TextBox Name="CourseGr"></TextBox>
                 <Label>Специальность</Label>
-                <TextBox></TextBox>
+                <TextBox Name="SpecGr"></TextBox>
                 <Button Content="Внести изменения"></Button>
+                <TextBlock></TextBlock>
+                <TextBlock></TextBlock>
+                <TextBlock></TextBlock>
+                <TextBlock></TextBlock>
+                <TextBlock></TextBlock>
+                <TextBlock></TextBlock>
+                <Button Name="textDelGroup" Click="DeleteGroup" Content="Удалить группу" BorderBrush="Red" Foreground="Red" Background="#FFFFDDDD"></Button>
             </StackPanel>
         </GroupBox>
     </Grid>
