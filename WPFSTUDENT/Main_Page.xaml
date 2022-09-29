@@ -23,9 +23,11 @@
                 <TextBlock></TextBlock>
                 <Button Name="CreateSpec" Content="Создать" Click="SpecCr"></Button>
                 <TextBlock></TextBlock>
-                <Button Name="EditSpec" Content="Редактировать" Click="SpecEd"></Button>
                 <TextBlock></TextBlock>
-                <Button Name="DeleteSpec" Content="Удалить" Click="SpecDel"></Button>
+                <TextBlock></TextBlock>
+                <TextBlock></TextBlock>
+                <Button Name="EditSpec" Content="Редактировать" Click="SpecEd"></Button>
+                
             </StackPanel>
         </GroupBox>
 
@@ -37,9 +39,11 @@
                 <TextBlock></TextBlock>
                 <Button Name="CreateGroup" Content="Создать" Click="GrCr"></Button>
                 <TextBlock></TextBlock>
-                <Button Name="Editgroup" Content="Редактировать" Click="GrEd"></Button>
                 <TextBlock></TextBlock>
-                <Button Name="DeleteGroup" Content="Удалить" Click="GrDel"></Button>
+                <TextBlock></TextBlock>
+                <TextBlock></TextBlock>
+                <Button Name="Editgroup" Content="Редактировать" Click="GrEd"></Button>
+                
             </StackPanel>
         </GroupBox>
 
@@ -51,9 +55,12 @@
                 <TextBlock></TextBlock>
                 <Button Name="CreateStud" Content="Создать" Click="StCr"></Button>
                 <TextBlock></TextBlock>
-                <Button Name="EditStud" Content="Редактировать" Click="StEd"></Button>
                 <TextBlock></TextBlock>
-                <Button Name="DeleteStud" Content="Удалить" Click="StDel"></Button>
+                <TextBlock></TextBlock>
+                <TextBlock></TextBlock>
+                <Button Name="EditStud" Content="Редактировать" Click="StEd"></Button>
+                
+                
 
 
             </StackPanel>

@@ -37,7 +37,16 @@
                 <Label>Курс</Label>
                 <TextBox></TextBox>
                 <Label>Специальность</Label>
-                <TextBox></TextBox>
+                <ComboBox Name="cmbGSpecId" Margin="10" SelectedItem="{Binding ElementName=tupa, Path=SelectedItem.Specialty}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock>
+                                <Run Text="{Binding Codes, UpdateSourceTrigger=PropertyChanged}"></Run>
+                                <Run Text="{Binding Namespec, UpdateSourceTrigger=PropertyChanged}"></Run>
+                            </TextBlock>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
                 <Button Content="Добавить группу"></Button>
             </StackPanel>
         </GroupBox>

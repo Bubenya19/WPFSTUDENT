@@ -9,12 +9,12 @@ namespace WPFSTUDENT
 {
     public class Group
     {
-        public static int GroupID = 0;
-        private string number;
+        
+        private int number;
         private string course;
 
 
-        public Group(string number, string course)
+        public Group(int number, string course)
         {
             Number1 = number;
 
@@ -22,7 +22,7 @@ namespace WPFSTUDENT
 
         }
 
-        public string Number1
+        public int Number1
         {
             get => number;
             set

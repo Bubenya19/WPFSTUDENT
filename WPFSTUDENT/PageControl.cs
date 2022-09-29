@@ -77,16 +77,7 @@ namespace WPFSTUDENT
         }
 
 
-        private static GroupDeletePage groupD_page;
-        public static GroupDeletePage Group_delete
-        {
-            get
-            {
-                if (groupD_page == null)
-                    groupD_page = new GroupDeletePage();
-                return groupD_page;
-            }
-        }
+       
 
 
 

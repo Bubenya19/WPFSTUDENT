@@ -68,15 +68,12 @@ namespace WPFSTUDENT
             NavigationService.Navigate(PageControl.Group_create);
         }
 
-        private void GrDel(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(PageControl.Group_edit);
-        }
+     
 
 
         private void GrEd(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(PageControl.Group_delete);
+            NavigationService.Navigate(PageControl.Group_edit);
         }
 
     }

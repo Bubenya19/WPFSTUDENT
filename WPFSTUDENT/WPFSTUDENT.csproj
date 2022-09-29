@@ -104,9 +104,6 @@
     <Compile Include="GroupCreatePage.xaml.cs">
       <DependentUpon>GroupCreatePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GroupDeletePage.xaml.cs">
-      <DependentUpon>GroupDeletePage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="GroupEditPage.xaml.cs">
       <DependentUpon>GroupEditPage.xaml</DependentUpon>
     </Compile>
@@ -131,10 +128,6 @@
       <DependentUpon>StudentEditPage.xaml</DependentUpon>
     </Compile>
     <Page Include="GroupCreatePage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="GroupDeletePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
